@@ -91,7 +91,6 @@ def show_dashboard():
     ))
     fig_progress_vistoria.update_layout(
         barmode='stack',
-        title='Progresso dos Laudos de Vistoria',
         xaxis_title='Status',
         yaxis_title='Número de Laudos',
         yaxis=dict(range=[0, total_vistoria_a_atingir])
