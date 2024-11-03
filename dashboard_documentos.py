@@ -8,7 +8,7 @@ def load_data(sheet_name):
     return pd.read_excel('contPGT_contPlanilhas.xlsx', sheet_name=sheet_name)
 
 def show_dashboard():
-    st.header("### Dashboard de Documentos PGT")
+    st.header("Dashboard de Documentos PGT")
     df_pgt = load_data(sheet_name='contPGT')
 
     if 'Objetivo' in df_pgt.columns:
