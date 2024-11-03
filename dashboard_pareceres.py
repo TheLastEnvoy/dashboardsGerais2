@@ -60,7 +60,7 @@ def show_dashboard():
     )
     st.plotly_chart(fig_progress_pareceres)
 
-    st.subheader("Gráfico de pizza - Assentamentos")
+    st.subheader("Distribuição de pareceres por assentamento")
     assentamento_data = df_pareceres['Assentamento'].value_counts()
     fig_assentamento = px.pie(
         names=assentamento_data.index,
