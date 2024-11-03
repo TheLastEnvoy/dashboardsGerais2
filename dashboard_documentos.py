@@ -48,8 +48,7 @@ def show_dashboard():
     )
     st.plotly_chart(fig_tipo_documento)
 
-    st.subheader("Distribuição dos documentos por assentamento")
-    title='Distribuição dos documentos por assentamento'
+    title="Distribuição dos documentos por assentamento"
     assentamento_data = df_pgt['Assentamento'].value_counts()
     st.bar_chart(assentamento_data)
 
