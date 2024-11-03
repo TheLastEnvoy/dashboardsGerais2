@@ -8,7 +8,7 @@ def load_data(sheet_name):
     return pd.read_excel('contPGT_contPlanilhas.xlsx', sheet_name=sheet_name)
 
 def show_dashboard():
-    st.header("Pareceres Conclusivos")
+    st.header("Dashboard de Pareceres")
     df_pareceres = load_data(sheet_name='contPareceres')
 
     assentamentos = ['Todos'] + sorted(list(df_pareceres['Assentamento'].unique()))
@@ -53,7 +53,7 @@ def show_dashboard():
     ))
     fig_progress_pareceres.update_layout(
         barmode='stack',
-    st.header("Progresso dos pareceres")
+        title='Progresso dos Pareceres',
         xaxis_title='Status',
         yaxis_title='Quantidade',
         legend_title='Legenda'
