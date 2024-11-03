@@ -7,9 +7,9 @@ from dashboard_laudos import show_dashboard as show_dashboard_laudos
 def main():
     st.title("Dashboard Supervisão Ocupacional - TED INCRA/UFPR")
     tab1, tab2, tab3, tab4 = st.tabs([
-        "Documentação da PGT",
-        "Planilhas de monitoramento",
-        "Pareceres para att. cadastral",
+        "Documentação PGT",
+        "Planilhas monitoramento",
+        "Pareceres conclusivos",
         "Laudos de supervisão ocupacional"
     ])
 
