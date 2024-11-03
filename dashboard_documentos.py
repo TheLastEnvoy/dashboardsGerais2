@@ -40,7 +40,6 @@ def show_dashboard():
     if selected_objetivo != "Todos" and 'Objetivo' in df_pgt.columns:
         df_pgt = df_pgt[df_pgt['Objetivo'] == selected_objetivo]
 
-    st.subheader("Distribuição por Tipo de Documento")
     tipo_documento_data = df_pgt['Tipo de documento PGT'].value_counts()
     fig_tipo_documento = px.pie(
         names=tipo_documento_data.index,
