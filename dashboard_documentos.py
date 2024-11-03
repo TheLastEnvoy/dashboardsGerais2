@@ -45,7 +45,6 @@ def show_dashboard():
     fig_tipo_documento = px.pie(
         names=tipo_documento_data.index,
         values=tipo_documento_data.values,
-        title='Distribuição dos Documentos por Tipo'
     )
     st.plotly_chart(fig_tipo_documento)
 
