@@ -10,7 +10,7 @@ def main():
         "Documentação da PGT",
         "Planilhas de monitoramento",
         "Pareceres para att. cadastral",
-        "Laudos de Superv. Ocupacional"
+        "Laudos de supervisão ocupacional"
     ])
 
     with tab1:
