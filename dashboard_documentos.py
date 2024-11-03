@@ -40,7 +40,7 @@ def show_dashboard():
     if selected_objetivo != "Todos" and 'Objetivo' in df_pgt.columns:
         df_pgt = df_pgt[df_pgt['Objetivo'] == selected_objetivo]
 
-    st.markdown("### Distribuição por Tipo de Documento")
+    st.markdown("### Distribuição dos documentos por tipo")
     tipo_documento_data = df_pgt['Tipo de documento PGT'].value_counts()
     fig_tipo_documento = px.pie(
         names=tipo_documento_data.index,
@@ -48,16 +48,16 @@ def show_dashboard():
     )
     st.plotly_chart(fig_tipo_documento)
 
-    st.markdown("### Distribuição por Assentamento")
+    st.markdown("### Distribuição dos documentos por assentamento")
     assentamento_data = df_pgt['Assentamento'].value_counts()
     st.bar_chart(assentamento_data)
 
     if 'Objetivo' in df_pgt.columns:
-        st.markdown("### Distribuição por Objetivo")
+        st.markdown("### Distribuição dos documentos por objetivo")
         objetivo_data = df_pgt['Objetivo'].value_counts()
         st.bar_chart(objetivo_data)
 
-    st.markdown("### Relação de Documentos")
+    st.markdown("### Relação geral da documentação")
     st.write(df_pgt)
 
     total_por_tipo_assentamento = df_pgt.groupby(['Tipo de documento PGT', 'Assentamento']).size().reset_index(name='Quantidade de Documentos')
