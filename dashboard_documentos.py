@@ -64,7 +64,7 @@ def show_dashboard():
     st.markdown("### Quantidade de documentos por tipo e assentamento")
     st.write(total_por_tipo_assentamento)
 
-    st.markdown("### Progresso da Solicitação de Documentação Complementar")
+    st.markdown("### Progresso de solicitação de documentação complementar")
     solicitacoes_atual = df_pgt[df_pgt['Tipo de documento PGT'] == 'Solicitação de documentação complementar'].shape[0]
     total_a_atingir = 674
 
@@ -76,14 +76,13 @@ def show_dashboard():
         marker_color='green'
     ))
     fig_progress.add_trace(go.Bar(
-        name='Faltando',
+        name='A atingir',
         x=['Solicitações'],
         y=[max(0, total_a_atingir - solicitacoes_atual)],
         marker_color='lightgrey'
     ))
     fig_progress.update_layout(
         barmode='stack',
-        title='Progresso das Solicitações de Documentação Complementar',
         xaxis_title='Status',
         yaxis_title='Número de Documentos',
         yaxis=dict(range=[0, total_a_atingir])
