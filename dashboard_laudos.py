@@ -116,7 +116,6 @@ def show_dashboard():
     ))
     fig_progress_mutirao.update_layout(
         barmode='stack',
-        title='Progresso dos Laudos de Mutirão',
         xaxis_title='Status',
         yaxis_title='Número de Laudos',
         yaxis=dict(range=[0, total_mutirao_a_atingir])
