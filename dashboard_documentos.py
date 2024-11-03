@@ -40,7 +40,7 @@ def show_dashboard():
     if selected_objetivo != "Todos" and 'Objetivo' in df_pgt.columns:
         df_pgt = df_pgt[df_pgt['Objetivo'] == selected_objetivo]
 
-    st.subheader("Distribuição por Tipo de Documento")
+    st.markdown("### Distribuição por Tipo de Documento")
     tipo_documento_data = df_pgt['Tipo de documento PGT'].value_counts()
     fig_tipo_documento = px.pie(
         names=tipo_documento_data.index,
@@ -49,23 +49,23 @@ def show_dashboard():
     )
     st.plotly_chart(fig_tipo_documento)
 
-    st.subheader("Distribuição por Assentamento")
+    st.markdown("### Distribuição por Assentamento")
     assentamento_data = df_pgt['Assentamento'].value_counts()
     st.bar_chart(assentamento_data)
 
     if 'Objetivo' in df_pgt.columns:
-        st.subheader("Distribuição por Objetivo")
+        st.markdown("### Distribuição por Objetivo")
         objetivo_data = df_pgt['Objetivo'].value_counts()
         st.bar_chart(objetivo_data)
 
-    st.subheader("Relação de Documentos")
+    st.markdown("### Relação de Documentos")
     st.write(df_pgt)
 
     total_por_tipo_assentamento = df_pgt.groupby(['Tipo de documento PGT', 'Assentamento']).size().reset_index(name='Quantidade de Documentos')
-    st.subheader("Quantidade de documentos por tipo e assentamento")
+    st.markdown("### Quantidade de documentos por tipo e assentamento")
     st.write(total_por_tipo_assentamento)
 
-    st.subheader("Progresso da Solicitação de Documentação Complementar")
+    st.markdown("### Progresso da Solicitação de Documentação Complementar")
     solicitacoes_atual = df_pgt[df_pgt['Tipo de documento PGT'] == 'Solicitação de documentação complementar'].shape[0]
     total_a_atingir = 674
 
