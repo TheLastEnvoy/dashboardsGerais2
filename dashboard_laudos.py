@@ -54,7 +54,7 @@ def show_dashboard():
     st.subheader("Relação geral de laudos")
     st.write(df_laudos)
 
-    st.subheader("Gráfico de barras - tipo de laudo")
+    st.subheader("Distribuição de laudos por tipo")
     chart_data = df_laudos['Tipo de Laudo'].value_counts()
     st.bar_chart(chart_data)
 
