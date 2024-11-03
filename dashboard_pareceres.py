@@ -53,7 +53,7 @@ def show_dashboard():
     ))
     fig_progress_pareceres.update_layout(
         barmode='stack',
-        title='### Progresso dos Pareceres',
+    st.header("Pareceres Progresso")
         xaxis_title='Status',
         yaxis_title='Quantidade',
         legend_title='Legenda'
