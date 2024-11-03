@@ -11,8 +11,8 @@ def main():
     tab1, tab2, tab3, tab4 = st.tabs([
         "Laudos de supervisão ocupacional",
         "Documentação PGT",
-        "Planilhas monitoramento",
-        "Pareceres conclusivos"
+        "Pareceres conclusivos",
+        "Planilhas monitoramento"
         
     ])
 
