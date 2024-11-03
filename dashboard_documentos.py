@@ -8,7 +8,7 @@ def load_data(sheet_name):
     return pd.read_excel('contPGT_contPlanilhas.xlsx', sheet_name=sheet_name)
 
 def show_dashboard():
-    st.header("Dashboard de Documentos PGT")
+    st.header("Dashboard de documentação da PGT")
     df_pgt = load_data(sheet_name='contPGT')
 
     if 'Objetivo' in df_pgt.columns:
@@ -45,7 +45,7 @@ def show_dashboard():
     fig_tipo_documento = px.pie(
         names=tipo_documento_data.index,
         values=tipo_documento_data.values,
-        title='Distribuição dos Documentos por Tipo'
+        title='Distribuição dos documentos por tipo'
     )
     st.plotly_chart(fig_tipo_documento)
 
