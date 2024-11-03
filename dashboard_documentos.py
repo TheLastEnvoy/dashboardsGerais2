@@ -50,7 +50,7 @@ def show_dashboard():
 
     assentamento_data = df_pgt['Assentamento'].value_counts()
     st.bar_chart(assentamento_data)
-        title="Distribuição dos documentos por assentamento" 
+    title="Distribuição dos documentos por assentamento" 
 
     if 'Objetivo' in df_pgt.columns:
         st.subheader("Distribuição dos documentos por objetivo")
