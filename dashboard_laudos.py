@@ -13,7 +13,7 @@ def remove_special_chars(text):
     return ''.join(ch for ch in unicodedata.normalize('NFKD', text) if not unicodedata.combining(ch))
 
 def show_dashboard():
-    st.header("(SO - TED INCRA/UFPR) - Laudos de Supervisão Ocupacional")
+    st.header("Laudos de Supervisão Ocupacional")
     df_laudos = load_data(sheet_name='contLaudos')
 
     tecnicos = ['Todos'] + sorted(list(df_laudos['Técnico'].unique()))
@@ -51,14 +51,14 @@ def show_dashboard():
     df_laudos['Data'] = pd.to_datetime(df_laudos['Data'], format='%d/%m/%Y').dt.date
     df_laudos = df_laudos[(df_laudos['Data'] >= start_date) & (df_laudos['Data'] <= end_date)]
 
-    st.subheader("Relação de laudos")
+    st.subheader("Relação geral de laudos")
     st.write(df_laudos)
 
     st.subheader("Gráfico de barras - tipo de laudo")
     chart_data = df_laudos['Tipo de Laudo'].value_counts()
     st.bar_chart(chart_data)
 
-    st.subheader("Gráfico de pizza - tipo de laudo")
+    st.subheader("Distribuição de laudos por tipo")
     pie_chart_data = df_laudos['Tipo de Laudo'].value_counts()
     fig = px.pie(names=pie_chart_data.index, values=pie_chart_data.values, title='Distribuição dos Laudos')
     st.plotly_chart(fig)
