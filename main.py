@@ -5,7 +5,7 @@ from dashboard_pareceres import show_dashboard as show_dashboard_pareceres
 from dashboard_laudos import show_dashboard as show_dashboard_laudos
 
 def main():
-    st.title("Dashboard Consolidado")
+    st.title("Dashboard Supervisão Ocupacional - TED INCRA/UFPR")
     tab1, tab2, tab3, tab4 = st.tabs([
         "Dashboard de Documentos PGT",
         "Dashboard de Planilhas",
