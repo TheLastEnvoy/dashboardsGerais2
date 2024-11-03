@@ -8,7 +8,7 @@ def load_data(sheet_name):
     return pd.read_excel('contPGT_contPlanilhas.xlsx', sheet_name=sheet_name)
 
 def show_dashboard():
-    st.header("Dashboard de documentação da PGT")
+    st.header("Dashboard de Documentos PGT")
     df_pgt = load_data(sheet_name='contPGT')
 
     if 'Objetivo' in df_pgt.columns:
@@ -40,31 +40,32 @@ def show_dashboard():
     if selected_objetivo != "Todos" and 'Objetivo' in df_pgt.columns:
         df_pgt = df_pgt[df_pgt['Objetivo'] == selected_objetivo]
 
+    st.subheader("Distribuição por Tipo de Documento")
     tipo_documento_data = df_pgt['Tipo de documento PGT'].value_counts()
     fig_tipo_documento = px.pie(
         names=tipo_documento_data.index,
         values=tipo_documento_data.values,
-        title='Distribuição dos documentos por tipo'
+        title='Distribuição dos Documentos por Tipo'
     )
     st.plotly_chart(fig_tipo_documento)
 
+    st.subheader("Distribuição por Assentamento")
     assentamento_data = df_pgt['Assentamento'].value_counts()
     st.bar_chart(assentamento_data)
-    st.subheader("Distribuição dos documentos por objetivo")
 
     if 'Objetivo' in df_pgt.columns:
-        st.subheader("Distribuição dos documentos por objetivo")
+        st.subheader("Distribuição por Objetivo")
         objetivo_data = df_pgt['Objetivo'].value_counts()
         st.bar_chart(objetivo_data)
 
-    st.subheader("Relação completa da documentação")
+    st.subheader("Relação de Documentos")
     st.write(df_pgt)
 
     total_por_tipo_assentamento = df_pgt.groupby(['Tipo de documento PGT', 'Assentamento']).size().reset_index(name='Quantidade de Documentos')
-    st.subheader("Quantitativos da documentação por tipo e assentamento")
+    st.subheader("Quantidade de documentos por tipo e assentamento")
     st.write(total_por_tipo_assentamento)
 
-    st.subheader("Barra de progresso das solicitações de documentação complementar")
+    st.subheader("Progresso da Solicitação de Documentação Complementar")
     solicitacoes_atual = df_pgt[df_pgt['Tipo de documento PGT'] == 'Solicitação de documentação complementar'].shape[0]
     total_a_atingir = 674
 
