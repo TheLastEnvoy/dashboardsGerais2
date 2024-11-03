@@ -60,7 +60,7 @@ def show_dashboard():
 
     st.subheader("Distribuição de laudos por tipo")
     pie_chart_data = df_laudos['Tipo de Laudo'].value_counts()
-    fig = px.pie(names=pie_chart_data.index, values=pie_chart_data.values, title='Distribuição dos Laudos')
+    fig = px.pie(names=pie_chart_data.index, values=pie_chart_data.values)
     st.plotly_chart(fig)
 
     total_por_tipo_laudo = df_laudos['Tipo de Laudo'].value_counts()
