@@ -65,7 +65,6 @@ def show_dashboard():
     fig_assentamento = px.pie(
         names=assentamento_data.index,
         values=assentamento_data.values,
-        title='Distribuição dos Pareceres por Assentamento'
     )
     st.plotly_chart(fig_assentamento)
 
