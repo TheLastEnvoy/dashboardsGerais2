@@ -6,7 +6,7 @@ def load_data(sheet_name):
     return pd.read_excel('contPGT_contPlanilhas.xlsx', sheet_name=sheet_name)
 
 def show_dashboard():
-    st.header("Dashboard de Planilhas")
+    st.header("Planilhas de monitoramento")
     data_planilhas = load_data(sheet_name='contPlanilhas')
 
     st.header("Totais")
