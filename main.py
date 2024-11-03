@@ -9,7 +9,7 @@ def main():
     tab1, tab2, tab3, tab4 = st.tabs([
         "Documentação da PGT",
         "Planilhas de monitoramento",
-        "Pareceres para atualização cadastral",
+        "Pareceres para att. cadastral",
         "Laudos de Superv. Ocupacional"
     ])
 
